@@ -21,6 +21,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint-config-prettier": "^2.9.0",
+    "husky": "^0.14.3",
     "jest": "^23.3.0",
     "pocket-build-tools": "git+https://git@github.com/Pocket/front-end-build-tools.git",
     "redux-devtools-extension": "^2.13.2",
@@ -119,6 +120,7 @@
     "test:watch": "npx jest --config=./config/jest.config.js --watch",
     "cy:run": "npx cypress run",
     "cy:record": "npx cypress run  --record --key 401783af-4b1c-4bb1-9d05-35d9ad833c89",
-    "cy:open": "npx cypress open"
+    "cy:open": "npx cypress open",
+    "prepush": "npm test"
   }
 }
