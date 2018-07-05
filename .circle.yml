@@ -1,0 +1,12 @@
+machine:
+  node:
+    version: 10
+dependencies:
+  override:
+    - npm ci
+  cache_directories:
+    - ~/.npm
+    - ~/.cache
+test:
+  override:
+    - npm test
