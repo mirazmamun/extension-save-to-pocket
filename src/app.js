@@ -21,7 +21,8 @@ export class AppFrame extends Component {
   }
 
   componentDidMount() {
-    const node = this.heightRef.current
+    const node =
+      this.heightRef.current
     this.frameObserver = new FrameObserver(node)
     this.frameObserver.observe()
   }

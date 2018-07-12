@@ -122,7 +122,7 @@
     "trailingComma": "none"
   },
   "lint-staged": {
-    "*.{js,jsx}": ["lint:fix", "git add"],
+    "*.{js,jsx}": ["npm run lint:fix", "git add"],
     "*.{json,scss,sass,css,less}": ["prettier --write", "git add"]
   },
   "scripts": {
@@ -139,6 +139,8 @@
     "cy:record":
       "npx cypress run  --record --key 401783af-4b1c-4bb1-9d05-35d9ad833c89",
     "cy:open": "npx cypress open",
+    "lint": "npx eslint -f table",
+    "lint:fix": "npx eslint --fix",
     "precommit": "lint-staged",
     "prepush": "npm test"
   }
