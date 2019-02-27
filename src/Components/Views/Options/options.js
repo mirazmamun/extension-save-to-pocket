@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'react-emotion'
+import styled from 'react-emotion'
 import { Icon } from 'Elements/Icons/icon'
 import { Colors, Shades } from 'Elements/Colors/colors'
 import { localize } from 'Common/_locales/locales'
@@ -54,32 +54,28 @@ const HeaderBlock = styled('h1')`
   align-items: center;
 `
 
-/* Renders
-------------------------------------------------------- */
-export class OptionsView extends React.Component {
-  render() {
-    return (
-      <OptionsWrapper>
-        <HeaderBlock>
-          <Icon name="pocketmark" color={Colors.hotCoral} margin="0 8px 0 0" />
-          {localize('options_page', 'header')} -{' '}
-          {localize('options_page', 'save_to_pocket')}
-        </HeaderBlock>
+export function OptionsView ({ toggleSite, toggleRecommendations }) {
+  return (
+    <OptionsWrapper>
+      <HeaderBlock>
+        <Icon name="pocketmark" color={Colors.hotCoral} margin="0 8px 0 0" />
+        {localize('options_page', 'header')} -{' '}
+        {localize('options_page', 'save_to_pocket')}
+      </HeaderBlock>
 
-        <AccountBlock />
+      <AccountBlock />
 
-        <ShortcutBlock />
+      <ShortcutBlock />
 
-        <SitesBlock />
+      <SitesBlock toggleSite={toggleSite} />
 
-        <RecsBlock />
+      <RecsBlock toggleRecommendations={toggleRecommendations} />
 
-        <QuestionsBlock />
+      <QuestionsBlock />
 
-        <MoreWaysBlock />
+      <MoreWaysBlock />
 
-        <FooterBlock />
-      </OptionsWrapper>
-    )
-  }
+      <FooterBlock />
+    </OptionsWrapper>
+  )
 }
